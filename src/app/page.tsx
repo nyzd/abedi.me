@@ -1,8 +1,7 @@
+import Link from "next/link";
 import {
     Card,
-    CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "../components/ui/card";
@@ -19,12 +18,14 @@ async function getPosts(): Promise<object> {
     return response.json();
 }
 
-const cutName = (path: string): string => path.split('-')[0];
+const cutName = (path: string): string =>
+    path.split('-')[0];
 
 const cutExtension = (path: string): string =>
     path.split('.')[0];
 
-const cutDescription = (path: string): string => path.split('-')[1];
+const cutDescription = (path: string): string =>
+    path.split('-')[1];
 
 export default async function Home() {
     const posts: any = await getPosts();
@@ -33,12 +34,15 @@ export default async function Home() {
         <main className="flex justify-center">
             <div className="p-5 w-1/3">
                 {(posts.tree as any[]).map((post, index) => (
-                    <Card className="cursor-pointer" key={index}>
-                        <CardHeader>
-                            <CardTitle>{cutName(cutExtension(post.path))}</CardTitle>
-                            <CardDescription>{cutExtension(cutDescription(post.path))}</CardDescription>
-                        </CardHeader>
-                    </Card>))}
+                    <Link href={`/${post.path}`} key={index}>
+                        <Card className="cursor-pointer" key={index}>
+                            <CardHeader>
+                                <CardTitle>{cutName(cutExtension(post.path))}</CardTitle>
+                                <CardDescription>{cutExtension(cutDescription(post.path))}</CardDescription>
+                            </CardHeader>
+                        </Card>
+                    </Link>
+                ))}
             </div>
         </main>
     )
