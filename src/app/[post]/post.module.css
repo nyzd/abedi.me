@@ -12,9 +12,21 @@
     width: 50rem;
 }
 
+.contentLoading {
+    display: inline-block;
+    background: #30303069;
+    padding: 15px;
+    border-radius: 5px;
+    width: 50rem;
+}
+
 @media only screen 
 and (max-width : 1000px) {
     .content {
+        width: 100%;
+    }
+
+    .contentLoading {
         width: 100%;
     }
 }

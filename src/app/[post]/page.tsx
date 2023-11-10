@@ -17,7 +17,7 @@ export default async function Page({ params }: { params: { post: string } }) {
 
     return (
         <main className={styles.main}>
-            <Suspense fallback={<h1>Loading</h1>}>
+            <Suspense fallback={<span className={styles.contentLoading} />}>
                 <div className={styles.content}>
                     <MDXRemote source={data} />
                 </div>
