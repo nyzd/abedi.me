@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Card, CardDescription, CardHead, CardTitle } from './(components)/card'
 import styles from './page.module.css'
+import { notFound } from 'next/navigation';
 export const runtime = "edge";
 
 const FILES_LIST_ROUTE: string = "/git/trees/main?recursive=1";
@@ -9,6 +10,10 @@ async function getPosts(): Promise<object> {
     const response = await fetch(
         `${process.env.GITHUB_API_URL}/repos/0xYakuza/${process.env.POSTS_REPO_NAME}${FILES_LIST_ROUTE}`
     );
+
+    if (response.status === 404) {
+        notFound();
+    }
 
     return response.json();
 }
