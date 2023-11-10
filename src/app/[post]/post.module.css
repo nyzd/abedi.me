@@ -1,13 +1,21 @@
 .main {
-    color: #FFF;
     background: #000;
     display: flex;
     justify-content: center;
-    padding: 10px;
+    margin: 30px;
 }
 
 .content {
     background: #303030b2;
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
+    width: 50rem;
 }
+
+@media only screen 
+and (max-width : 1000px) {
+    .content {
+        width: 100%;
+    }
+}
+
