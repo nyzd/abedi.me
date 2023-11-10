@@ -1,0 +1,13 @@
+.main {
+    color: #FFF;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.content {
+    background: #303030b2;
+    padding: 10px;
+    border-radius: 5px;
+}
