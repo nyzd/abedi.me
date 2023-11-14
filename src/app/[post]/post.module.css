@@ -6,10 +6,28 @@
 }
 
 .content {
-    background: #303030b2;
+    background: #34343491;
     padding: 15px;
     border-radius: 5px;
     width: 50rem;
+    line-height: 28px;
+    word-break: break-word;
+    letter-spacing: -0.003em;
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.content h1 {
+    margin-bottom: 20px;
+}
+
+.content h2 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    margin-bottom: 1em;
 }
 
 .contentLoading {
