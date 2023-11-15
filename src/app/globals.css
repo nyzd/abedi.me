@@ -31,3 +31,7 @@ blockquote {
 blockquote p {
     margin: 0!important;
 }
+
+blockquote {
+    margin-bottom: 1em;
+}
